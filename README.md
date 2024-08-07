@@ -2,6 +2,7 @@
 
 Toto je aplikace pro správu nákupních seznamů s frontend částí v Next.js a backend částí v Node.js.
 Muj kód je v dir /my-shopping-list-app/app/lists a /node/index.js
+Demo běží na [my-shopping-list-app-ten.vercel.app](https://my-shopping-list-app-ten.vercel.app)
 
 ## Instalace
 

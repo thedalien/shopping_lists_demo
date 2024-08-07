@@ -16,6 +16,12 @@ app.use(express.json());
 
 // Lists API
 
+app.get("/", (res) => {
+  res.send(
+    `Visit <a href="my-shopping-list-app-ten.vercel.app">List App</a> to see the app.`
+  );
+});
+
 // Search API for lists and list items ------------------------------------
 app.get("/api/search", async (req, res) => {
   const { query } = req.query;
