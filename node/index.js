@@ -4,7 +4,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 80;
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -16,7 +16,7 @@ app.use(express.json());
 
 // Lists API
 
-app.get("/", (res) => {
+app.get("/", (req, res) => {
   res.send(
     `Visit <a href="my-shopping-list-app-ten.vercel.app">List App</a> to see the app.`
   );
@@ -64,7 +64,7 @@ app.get("/api/search", async (req, res) => {
 });
 
 // Get all lists ------------------------------------
-app.get("/api/lists", async (res) => {
+app.get("/api/lists", async (req, res) => {
   try {
     const { data, error } = await supabase
       .from("lists")
@@ -304,6 +304,6 @@ app.delete("/api/items/:id", async (req, res) => {
   }
 });
 
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
   console.log(`Server running on port ${port}`);
 });
